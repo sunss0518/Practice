@@ -48,8 +48,8 @@ window.onload = function() {
             } else { return null; }        
         }        
     }
-    tabAppSlider()
     tabApp();
+    tabAppSlider();
     function tabAppSlider() {
         var wrapApp = document.getElementById("wrap-tab-app");
         var appDown = document.getElementById("wrap-tab-app-down");
@@ -60,7 +60,7 @@ window.onload = function() {
             if (delta < 0) {
                 appDown.style.display = "block";
                 more.style.display = "none";
-            } else {                                                        // 2016/11/7
+            } else {                                                   
                 var y = wrapApp.scrollTop;
                 if (y == 0) {
                     more.style.display = "block";
@@ -69,7 +69,7 @@ window.onload = function() {
             }
         });
     }
-    function tabApp() {                                                     // 2016/11/7
+    function tabApp() {                                              
         var app = document.getElementById("app");
         var wrapApp = document.getElementById("wrap-tab-app");
         var appDown = document.getElementById("app-down");
@@ -77,16 +77,16 @@ window.onload = function() {
         var triangle = document.getElementById("triangle");
         EventUtil.addHandler(app, "click", function(event) {        
             var boolZ = wrapApp.style.zIndex;
-            if (boolZ == -1) {
-                wrapApp.style.zIndex = 1;
-                appUp.style.zIndex = -1;
-                appDown.style.zIndex = 1;
-                triangle.style.zIndex = 2;
+            if (boolZ == "-1") {
+                wrapApp.style.zIndex = "1";
+                appUp.style.zIndex = "-1";
+                appDown.style.zIndex = "1";
+                triangle.style.zIndex = "2";
             } else {
-                wrapApp.style.zIndex = -1;
-                appUp.style.zIndex = 1;
-                appDown.style.zIndex = -1;
-                triangle.style.zIndex = -1;
+                wrapApp.style.zIndex = "-1";
+                appUp.style.zIndex = "1";
+                appDown.style.zIndex = "-1";
+                triangle.style.zIndex = "-1";
             }
         });
     }
