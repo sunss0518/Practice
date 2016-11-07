@@ -48,15 +48,46 @@ window.onload = function() {
             } else { return null; }        
         }        
     }
-    var app = document.getElementById("wrap-tab-app");
-    var appDown = document.getElementById("wrap-tab-app-down");
-    var more = document.getElementById("more");
-    EventUtil.addHandler(app, "mousewheel", function(event) {
-        event = EventUtil.getEvent(event);
-        var delta = event.wheelDelta;
-        if (delta < 0) {
-            appDown.style.display = "block";
-            more.style.display = "none";
-        }
-    });
+    tabAppSlider()
+    tabApp();
+    function tabAppSlider() {
+        var wrapApp = document.getElementById("wrap-tab-app");
+        var appDown = document.getElementById("wrap-tab-app-down");
+        var more = document.getElementById("more");
+        EventUtil.addHandler(wrapApp, "mousewheel", function(event) {
+            event = EventUtil.getEvent(event);
+            var delta = event.wheelDelta;
+            if (delta < 0) {
+                appDown.style.display = "block";
+                more.style.display = "none";
+            } else {                                                        // 2016/11/7
+                var y = wrapApp.scrollTop;
+                if (y == 0) {
+                    more.style.display = "block";
+                    appDown.style.display = "none";
+                }
+            }
+        });
+    }
+    function tabApp() {                                                     // 2016/11/7
+        var app = document.getElementById("app");
+        var wrapApp = document.getElementById("wrap-tab-app");
+        var appDown = document.getElementById("app-down");
+        var appUp = document.getElementById("app-up");
+        var triangle = document.getElementById("triangle");
+        EventUtil.addHandler(app, "click", function(event) {        
+            var boolZ = wrapApp.style.zIndex;
+            if (boolZ == -1) {
+                wrapApp.style.zIndex = 1;
+                appUp.style.zIndex = -1;
+                appDown.style.zIndex = 1;
+                triangle.style.zIndex = 2;
+            } else {
+                wrapApp.style.zIndex = -1;
+                appUp.style.zIndex = 1;
+                appDown.style.zIndex = -1;
+                triangle.style.zIndex = -1;
+            }
+        });
+    }
 };
