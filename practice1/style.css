@@ -53,8 +53,8 @@ body {
     font-size: 14px;
 }
 .wrap {                                      
-	position: relative;
-	background-color: #fff;  
+    position: relative;
+    background-color: #fff;  
 }
 input {
     height: 40px;
@@ -87,7 +87,7 @@ a {
     position: relative;
 }
 #app-up, #notication-up {                          
-	left: 8px;
+    left: 8px;
 }
 #app-down, #notication-down {                         
     left: -8px;
@@ -192,10 +192,10 @@ hr {
     margin-top: 50px;
 }
 .box {
-	display: flex;                                               
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items: center;
+    display: flex;                                               
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 100px;
     cursor: pointer;
