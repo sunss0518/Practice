@@ -52,6 +52,10 @@
 body {
     font-size: 14px;
 }
+.wrap {                                      
+	position: relative;
+	background-color: #fff;  
+}
 input {
     height: 40px;
     border: 1px solid #bcbbbb;
@@ -73,9 +77,20 @@ a {
     justify-content: flex-end;
     align-items: center;
     margin: 8px 20px 0 0;
+    background-color: #fff; 
 }
 .nav-head-right div {
     margin: 0 10px;
+    cursor: pointer;
+}
+#app-up, #app-down, #notication-up, #notication-down {                              
+    position: relative;
+}
+#app-up, #notication-up {                          
+	left: 8px;
+}
+#app-down, #notication-down {                         
+    left: -8px;
 }
 li {
     display: inline-block;
@@ -150,7 +165,6 @@ li {
     justify-content: center;
     width: 382px;
     height: 512px;
-    border: 1px solid #ccc;
     box-shadow: 2px 2px 5px #ccc, -2px -2px 5px #ccc;
     background-color: #fff;
     overflow: auto;
@@ -178,9 +192,12 @@ hr {
     margin-top: 50px;
 }
 .box {
+	display: flex;                                               
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
     width: 100px;
     height: 100px;
-    outline: 1px solid red;
     cursor: pointer;
 }
 .box:hover {
@@ -204,4 +221,16 @@ hr {
     position: absolute;
     left: 60px;
     bottom: 10px;
+}
+
+#triangle {                                                          
+    position: absolute;                      
+    top: 25px;
+    right: 143px;
+    width: 0; 
+    height: 0;
+    overflow: hidden;
+    border: 15px solid transparent;
+    border-bottom-color: #fff;
+    filter: drop-shadow(2px -2px 3px #ccc);
 }
